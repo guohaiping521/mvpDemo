@@ -1,11 +1,11 @@
 package com.mvpdemo.data;
 
-import com.mvpdemo.base.CommonCallback;
+import com.mvpdemo.base.Observable;
 
 public interface MainDataSource {
 
-    void loadData(CommonCallback commonCallback);
+    Observable<String> loadData(int gradeId);
 
-    void loadExtralData(CommonCallback commonCallback);
+    Observable<String> loadExtralData();
 
 }

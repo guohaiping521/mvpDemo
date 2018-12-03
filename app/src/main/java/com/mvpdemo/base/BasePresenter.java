@@ -12,15 +12,15 @@ public abstract class BasePresenter<V extends BaseViewI> implements BasePresente
      */
     private V mBaseView;
 
-    /**
+  /*  *//**
      * 加载数据
-     */
+     *//*
     @Override
     public void onLoad() {
         if (!isViewAttached()) {
             return;
         }
-    }
+    }*/
 
     @Override
     public boolean isViewAttached() {

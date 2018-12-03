@@ -1,6 +1,7 @@
 package com.mvpdemo.data;
 
 import com.mvpdemo.base.CommonCallback;
+import com.mvpdemo.base.Observable;
 
 public class MainRepository implements MainDataSource {
 
@@ -14,12 +15,26 @@ public class MainRepository implements MainDataSource {
     }
 
     @Override
-    public void loadData(CommonCallback commonCallback) {
-        commonCallback.onLoadSuccess();
+    public Observable<String> loadData(int gradeId) {
+        return new Observable<String>(){
+
+            @Override
+            public void start(CommonCallback<String> callback) {
+                //耗时操作
+                callback.onLoadSuccess("1122");
+            }
+        };
     }
 
     @Override
-    public void loadExtralData(CommonCallback commonCallback) {
-        commonCallback.onLoadSuccess();
+    public Observable<String> loadExtralData() {
+        return new Observable<String>(){
+
+            @Override
+            public void start(CommonCallback<String> callback) {
+                //耗时操作
+                callback.onLoadSuccess("1122");
+            }
+        };
     }
 }

@@ -13,36 +13,34 @@ public class MainPresenter extends BasePresenter<MainViewI> {
 
     public MainPresenter(MainDataSource mainDataSource, BaseViewI baseViewI) {
         super(mainDataSource, baseViewI);
-        mMainDataSource=mainDataSource;
-        mMainView= (MainViewI) baseViewI;
+        mMainDataSource = mainDataSource;
+        mMainView = (MainViewI) baseViewI;
         mMainView.setPresenter(this);
     }
 
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        mMainDataSource.loadData(new CommonCallback() {
+    public void loadData(int gradeId) {
+        mMainDataSource.loadData(gradeId).start(new CommonCallback<String>() {
             @Override
-            public void onLoadSuccess() {
+            public void onLoadSuccess(String result) {
                 mMainView.showSuccessView();
             }
 
             @Override
-            public void onLoadFail() {
+            public void onLoadFail(Exception e) {
                 mMainView.showFailView();
             }
         });
     }
 
     public void loadExtralData() {
-        mMainDataSource.loadExtralData(new CommonCallback() {
+        mMainDataSource.loadExtralData().start(new CommonCallback<String>() {
             @Override
-            public void onLoadSuccess() {
+            public void onLoadSuccess(String result) {
                 mMainView.showExtralSuccessView();
             }
 
             @Override
-            public void onLoadFail() {
+            public void onLoadFail(Exception e) {
                 mMainView.showExtralFailView();
             }
         });

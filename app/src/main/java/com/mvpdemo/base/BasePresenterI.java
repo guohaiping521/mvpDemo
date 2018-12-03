@@ -1,10 +1,6 @@
 package com.mvpdemo.base;
 
 public interface BasePresenterI<T> {
-    /**
-     * 数据请求loading
-     */
-    void onLoad();
 
     /**
      * 是否与view建立了连接

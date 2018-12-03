@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class MainFragment extends Fragment implements MainViewI,View.OnClickListener {
 
+    private int gradeId=0;
+
     private MainPresenter mPresenter;
     private Context mContext;
     private Button mButton;
@@ -63,7 +65,7 @@ public class MainFragment extends Fragment implements MainViewI,View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
-                mPresenter.onLoad();
+                mPresenter.loadData(gradeId);
                 break;
             case R.id.button1:
                 mPresenter.loadExtralData();

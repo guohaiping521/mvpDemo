@@ -1,9 +1,17 @@
 package com.mvpdemo.base;
 
-public interface CommonCallback {
+public interface CommonCallback<T> {
 
-    void onLoadSuccess();
+    /**
+     * 回调成功
+     * @param result
+     */
+    void onLoadSuccess(T result);
 
-    void onLoadFail();
+    /**
+     * 失败
+     * @param e
+     */
+    void onLoadFail(Exception e);
 
 }
