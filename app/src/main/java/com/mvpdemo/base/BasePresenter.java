@@ -1,6 +1,7 @@
-package test_webview_demo.example.com.mvpdemo.base;
+package com.mvpdemo.base;
 
-import test_webview_demo.example.com.mvpdemo.data.MainDataSource;
+
+import com.mvpdemo.data.MainDataSource;
 
 public abstract class BasePresenter<V extends BaseViewI> implements BasePresenterI<V> {
 

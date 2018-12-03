@@ -1,4 +1,4 @@
-package test_webview_demo.example.com.mvpdemo.data;
+package com.mvpdemo.data;
 
 public class MainRepository implements MainDataSource {
 

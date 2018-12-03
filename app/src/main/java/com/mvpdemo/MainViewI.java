@@ -1,6 +1,7 @@
-package test_webview_demo.example.com.mvpdemo;
+package com.mvpdemo;
 
-import test_webview_demo.example.com.mvpdemo.base.BaseViewI;
+
+import com.mvpdemo.base.BaseViewI;
 
 public interface MainViewI extends BaseViewI<MainPresenter> {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="test_webview_demo.example.com.mvpdemo">
+    package="com.mvpdemo">
 
     <application
         android:allowBackup="true"

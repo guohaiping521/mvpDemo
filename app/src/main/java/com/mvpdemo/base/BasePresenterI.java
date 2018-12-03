@@ -1,4 +1,4 @@
-package test_webview_demo.example.com.mvpdemo.base;
+package com.mvpdemo.base;
 
 public interface BasePresenterI<T> {
     /**

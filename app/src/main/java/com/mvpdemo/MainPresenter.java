@@ -1,10 +1,11 @@
-package test_webview_demo.example.com.mvpdemo;
+package com.mvpdemo;
 
-import test_webview_demo.example.com.mvpdemo.base.BasePresenter;
-import test_webview_demo.example.com.mvpdemo.base.BaseViewI;
-import test_webview_demo.example.com.mvpdemo.data.MainDataSource;
 
-public class MainPresenter extends BasePresenter<MainViewI>  {
+import com.mvpdemo.base.BasePresenter;
+import com.mvpdemo.base.BaseViewI;
+import com.mvpdemo.data.MainDataSource;
+
+public class MainPresenter extends BasePresenter<MainViewI> {
 
     private MainDataSource mMainDataSource;
     private MainViewI mMainView;

@@ -1,4 +1,4 @@
-package test_webview_demo.example.com.mvpdemo.utils;
+package com.mvpdemo.utils;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
