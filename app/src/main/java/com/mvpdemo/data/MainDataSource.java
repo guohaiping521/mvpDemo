@@ -1,16 +1,11 @@
 package com.mvpdemo.data;
 
+import com.mvpdemo.base.CommonCallback;
+
 public interface MainDataSource {
 
-    interface MainDataCallback {
+    void loadData(CommonCallback mainDataCallback);
 
-        void onLoadSuccess();
+    void loadExtralData(CommonCallback mainDataCallback);
 
-        void onLoadFail();
-    }
-
-
-    void loadData(MainDataCallback mainDataCallback);
-
-    void loadExtralData(MainDataCallback mainDataCallback);
 }

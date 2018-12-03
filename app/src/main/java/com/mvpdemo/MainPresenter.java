@@ -3,6 +3,7 @@ package com.mvpdemo;
 
 import com.mvpdemo.base.BasePresenter;
 import com.mvpdemo.base.BaseViewI;
+import com.mvpdemo.base.CommonCallback;
 import com.mvpdemo.data.MainDataSource;
 
 public class MainPresenter extends BasePresenter<MainViewI> {
@@ -20,7 +21,7 @@ public class MainPresenter extends BasePresenter<MainViewI> {
     @Override
     public void onLoad() {
         super.onLoad();
-        mMainDataSource.loadData(new MainDataSource.MainDataCallback() {
+        mMainDataSource.loadData(new CommonCallback() {
             @Override
             public void onLoadSuccess() {
                 mMainView.showSuccessView();
@@ -34,7 +35,7 @@ public class MainPresenter extends BasePresenter<MainViewI> {
     }
 
     public void loadExtralData() {
-        mMainDataSource.loadExtralData(new MainDataSource.MainDataCallback() {
+        mMainDataSource.loadExtralData(new CommonCallback() {
             @Override
             public void onLoadSuccess() {
                 mMainView.showExtralSuccessView();
