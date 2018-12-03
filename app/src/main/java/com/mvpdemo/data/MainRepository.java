@@ -1,5 +1,7 @@
 package com.mvpdemo.data;
 
+import com.mvpdemo.base.CommonCallback;
+
 public class MainRepository implements MainDataSource {
 
     private static MainRepository INSTANCE = null;
@@ -12,12 +14,12 @@ public class MainRepository implements MainDataSource {
     }
 
     @Override
-    public void loadData(MainDataCallback mainDataCallback) {
-        mainDataCallback.onLoadSuccess();
+    public void loadData(CommonCallback commonCallback) {
+        commonCallback.onLoadSuccess();
     }
 
     @Override
-    public void loadExtralData(MainDataCallback mainDataCallback) {
-        mainDataCallback.onLoadSuccess();
+    public void loadExtralData(CommonCallback commonCallback) {
+        commonCallback.onLoadSuccess();
     }
 }

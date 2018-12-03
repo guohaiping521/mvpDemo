@@ -4,8 +4,8 @@ import com.mvpdemo.base.CommonCallback;
 
 public interface MainDataSource {
 
-    void loadData(CommonCallback mainDataCallback);
+    void loadData(CommonCallback commonCallback);
 
-    void loadExtralData(CommonCallback mainDataCallback);
+    void loadExtralData(CommonCallback commonCallback);
 
 }
