@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import test_webview_demo.example.com.mvpdemo.R;
 
 public class MainFragment extends Fragment implements MainViewI,View.OnClickListener {
 

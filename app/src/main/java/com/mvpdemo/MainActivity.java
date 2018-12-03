@@ -5,7 +5,6 @@ import android.os.Bundle;
 import com.mvpdemo.data.MainRepository;
 import com.mvpdemo.utils.ActivityUtils;
 
-import test_webview_demo.example.com.mvpdemo.R;
 
 public class MainActivity extends AppCompatActivity {
 
