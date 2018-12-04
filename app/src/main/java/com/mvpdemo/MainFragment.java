@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainFragment extends Fragment implements MainViewI,View.OnClickListener {
+public class MainFragment extends Fragment implements MainContract.View,View.OnClickListener {
 
     private int gradeId=0;
 
-    private MainPresenter mPresenter;
+    private MainContract.Presenter mPresenter;
     private Context mContext;
     private Button mButton;
 
@@ -40,7 +40,7 @@ public class MainFragment extends Fragment implements MainViewI,View.OnClickList
     }
 
     @Override
-    public void setPresenter(MainPresenter presenter) {
+    public void setPresenter(MainContract.Presenter presenter) {
         mPresenter = presenter;
     }
 

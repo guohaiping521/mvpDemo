@@ -1,6 +1,6 @@
 package com.mvpdemo.base;
 
-public interface BaseViewI<T> {
+public interface BaseView<T> {
 
     void setPresenter(T presenter);
 

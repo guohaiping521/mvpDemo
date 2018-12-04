@@ -1,39 +1,8 @@
 package com.mvpdemo.base;
 
 
-import com.mvpdemo.data.MainDataSource;
 
-public abstract class BasePresenter<V extends BaseViewI> implements BasePresenterI<V> {
+public interface BasePresenter {
 
-    public BasePresenter(MainDataSource mainDataSource, BaseViewI baseViewI) { }
-
-    /**
-     * 绑定的view
-     */
-    private V mBaseView;
-
-  /*  *//**
-     * 加载数据
-     *//*
-    @Override
-    public void onLoad() {
-        if (!isViewAttached()) {
-            return;
-        }
-    }*/
-
-    @Override
-    public boolean isViewAttached() {
-        return mBaseView != null;
-    }
-
-    @Override
-    public V getView() {
-        return mBaseView;
-    }
-
-    @Override
-    public void detachView() {
-        mBaseView = null;
-    }
+    void detachView();
 }

@@ -1,9 +1,9 @@
 package com.mvpdemo;
 
 
-import com.mvpdemo.base.BaseViewI;
+import com.mvpdemo.base.BaseView;
 
-public interface MainViewI extends BaseViewI<MainPresenter> {
+public interface MainViewI extends BaseView<MainPresenter> {
 
     void showExtralSuccessView();
 
