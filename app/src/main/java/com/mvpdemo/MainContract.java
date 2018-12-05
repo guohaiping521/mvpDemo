@@ -24,7 +24,7 @@ import com.mvpdemo.base.BaseView;
  */
 public interface MainContract {
 
-    interface View extends BaseView<MainContract.Presenter> {
+    interface View extends BaseView{
 
         void showExtralSuccessView();
 
