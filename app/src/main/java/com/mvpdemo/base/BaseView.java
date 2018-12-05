@@ -1,17 +1,31 @@
 package com.mvpdemo.base;
 
-public interface BaseView<T> {
+public interface BaseView {
 
-    void setPresenter(T presenter);
+   /*   *//**
+     * 成功
+     *//*
+    void onSuccess();
 
-    /**
-     * 显示success的界面
-     */
-    void showSuccessView();
+    *//**
+     * 失败
+     *//*
+    void onError();*/
 
-    /**
-     * 显示失败的界面
-     */
-    void showFailView();
+  /*  *//**
+     * 展示loading view
+     *//*
+    void showLoading();
+
+    *//**
+     * 隐藏loading view
+     *//*
+    void hideLoading();
+
+    *//**
+     * 是否断网
+     * @return
+     *//*
+    boolean isNetworkConnected();*/
 
 }

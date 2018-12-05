@@ -1,19 +1,19 @@
 package com.mvpdemo;
 
 
+import com.mvpdemo.base.BaseDataI;
+import com.mvpdemo.base.BasePresenter;
 import com.mvpdemo.base.BaseView;
 import com.mvpdemo.base.CommonCallback;
 import com.mvpdemo.data.MainDataSource;
 
-public class MainPresenter implements MainContract.Presenter {
+public class MainPresenter<V extends MainContract.View> extends BasePresenter<V> implements MainContract.Presenter<V> {
 
     private MainDataSource mMainDataSource;
-    private MainViewI mMainView;
 
-    public MainPresenter(MainDataSource mainDataSource, BaseView baseViewI) {
-        mMainDataSource = mainDataSource;
-        mMainView = (MainViewI) baseViewI;
-        mMainView.setPresenter(this);
+    public MainPresenter(BaseDataI dataManager) {
+        super(dataManager);
+        mMainDataSource= (MainDataSource) dataManager;
     }
 
     @Override
@@ -21,12 +21,12 @@ public class MainPresenter implements MainContract.Presenter {
         mMainDataSource.loadData(gradeId).start(new CommonCallback<String>() {
             @Override
             public void onLoadSuccess(String result) {
-                mMainView.showSuccessView();
+                getBaseView().showSuccessView();
             }
 
             @Override
             public void onLoadFail(Exception e) {
-                mMainView.showFailView();
+                getBaseView().showFailView();
             }
         });
     }
@@ -36,18 +36,14 @@ public class MainPresenter implements MainContract.Presenter {
         mMainDataSource.loadExtralData().start(new CommonCallback<String>() {
             @Override
             public void onLoadSuccess(String result) {
-                mMainView.showExtralSuccessView();
+                getBaseView().showExtralSuccessView();
             }
 
             @Override
             public void onLoadFail(Exception e) {
-                mMainView.showExtralFailView();
+                getBaseView().showExtralFailView();
             }
         });
     }
 
-    @Override
-    public void detachView() {
-        mMainView = null;
-    }
 }

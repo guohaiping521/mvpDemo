@@ -1,5 +1,6 @@
 package com.mvpdemo.data;
 
+import com.mvpdemo.base.BaseDataI;
 import com.mvpdemo.base.CommonCallback;
 import com.mvpdemo.base.Observable;
 
@@ -16,7 +17,6 @@ public class MainRepository implements MainDataSource {
 
     @Override
     public Observable<String> loadData(int gradeId) {
-
         return new Observable<String>(){
 
             @Override

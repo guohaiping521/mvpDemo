@@ -15,7 +15,8 @@
  */
 
 package com.mvpdemo;
-import com.mvpdemo.base.BasePresenter;
+
+import com.mvpdemo.base.BasePresenterI;
 import com.mvpdemo.base.BaseView;
 
 /**
@@ -23,15 +24,19 @@ import com.mvpdemo.base.BaseView;
  */
 public interface MainContract {
 
-    interface View extends BaseView<Presenter> {
+    interface View extends BaseView {
 
-       void showExtralSuccessView();
+        void showExtralSuccessView();
 
-       void showExtralFailView();
+        void showExtralFailView();
+
+        void showSuccessView();
+
+        void showFailView();
 
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter<V extends BaseView> extends BasePresenterI<V> {
 
         void loadData(int grade);
 
