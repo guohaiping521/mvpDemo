@@ -24,7 +24,7 @@ import com.mvpdemo.base.BaseView;
  */
 public interface MainContract {
 
-    interface View extends BaseView {
+    interface View extends BaseView<MainContract.Presenter> {
 
         void showExtralSuccessView();
 
@@ -36,7 +36,7 @@ public interface MainContract {
 
     }
 
-    interface Presenter<V extends BaseView> extends BasePresenterI<V> {
+    interface Presenter extends BasePresenterI {
 
         void loadData(int grade);
 

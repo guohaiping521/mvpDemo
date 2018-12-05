@@ -1,24 +1,20 @@
 package com.mvpdemo;
 
 
-import com.mvpdemo.base.BaseDataI;
 import com.mvpdemo.base.BasePresenter;
-import com.mvpdemo.base.BaseView;
 import com.mvpdemo.base.CommonCallback;
 import com.mvpdemo.data.MainDataSource;
 
-public class MainPresenter<V extends MainContract.View> extends BasePresenter<V> implements MainContract.Presenter<V> {
+public class MainPresenter<V extends MainContract.View,T extends MainDataSource>
+        extends BasePresenter<V,T> implements MainContract.Presenter {
 
-    private MainDataSource mMainDataSource;
-
-    public MainPresenter(BaseDataI dataManager) {
-        super(dataManager);
-        mMainDataSource= (MainDataSource) dataManager;
+    public MainPresenter(V baseView, T dataManager) {
+        super(baseView, dataManager);
     }
 
     @Override
     public void loadData(int gradeId) {
-        mMainDataSource.loadData(gradeId).start(new CommonCallback<String>() {
+        getDataSource().loadData(gradeId).start(new CommonCallback<String>() {
             @Override
             public void onLoadSuccess(String result) {
                 getBaseView().showSuccessView();
@@ -33,7 +29,7 @@ public class MainPresenter<V extends MainContract.View> extends BasePresenter<V>
 
     @Override
     public void loadExtralData() {
-        mMainDataSource.loadExtralData().start(new CommonCallback<String>() {
+        getDataSource().loadExtralData().start(new CommonCallback<String>() {
             @Override
             public void onLoadSuccess(String result) {
                 getBaseView().showExtralSuccessView();

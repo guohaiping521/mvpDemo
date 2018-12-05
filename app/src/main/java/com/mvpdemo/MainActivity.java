@@ -5,22 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.mvpdemo.data.MainDataSource;
+import com.mvpdemo.base.BasePresenterI;
 import com.mvpdemo.data.MainRepository;
-import com.mvpdemo.utils.ActivityUtils;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View,View.OnClickListener {
 
-    private MainContract.Presenter<MainContract.View> mPresenter;
+    private MainContract.Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        mPresenter= new MainPresenter<>(this,MainRepository.getInstance());
         findViewById(R.id.loadData_btn).setOnClickListener(this);
         findViewById(R.id.loadExtraData_btn).setOnClickListener(this);
-        mPresenter=new MainPresenter(MainRepository.getInstance());
-        mPresenter.onAttach(this);
     }
 
     @Override

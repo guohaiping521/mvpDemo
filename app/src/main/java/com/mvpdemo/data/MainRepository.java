@@ -1,6 +1,5 @@
 package com.mvpdemo.data;
 
-import com.mvpdemo.base.BaseDataI;
 import com.mvpdemo.base.CommonCallback;
 import com.mvpdemo.base.Observable;
 

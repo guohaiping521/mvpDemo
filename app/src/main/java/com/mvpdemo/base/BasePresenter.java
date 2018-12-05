@@ -1,16 +1,12 @@
 package com.mvpdemo.base;
 
-public class BasePresenter<V extends BaseView> implements BasePresenterI<V> {
+public class BasePresenter<V extends BaseView, T extends BaseDataI> implements BasePresenterI {
 
     private V mBaseView;
-    private final BaseDataI mBaseDataI;
+    private T mBaseDataI;
 
-    public BasePresenter(BaseDataI dataManager) {
+    public BasePresenter(V baseView, T dataManager) {
         this.mBaseDataI = dataManager;
-    }
-
-    @Override
-    public void onAttach(V baseView) {
         this.mBaseView = baseView;
     }
 
@@ -23,7 +19,7 @@ public class BasePresenter<V extends BaseView> implements BasePresenterI<V> {
         return mBaseView;
     }
 
-    public BaseDataI getDataSource() {
+    public T getDataSource() {
         return mBaseDataI;
     }
 }

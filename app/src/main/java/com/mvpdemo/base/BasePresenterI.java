@@ -2,9 +2,9 @@ package com.mvpdemo.base;
 
 
 
-public interface BasePresenterI<V extends BaseView> {
+public interface BasePresenterI {
 
-    void onAttach(V baseView);
+    /*void onAttach(V baseView);*/
 
     void detachView();
 }
